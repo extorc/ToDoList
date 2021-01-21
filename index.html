@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <script src="text_editor.js"></script>
+    <meta charset="UTF-8">
+    <title>Extorc App</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div onclick="min()">
+      <span id = "file_menu" class = "fm">new</span> 
+    </div>
+    <div>
+      <span id = "file_menu2" class = "fm">open</span> 
+    </div>
+    <div id="container">
+      <nav>
+        <div id="buttons">
+          <div id="file" onclick="open_file_menu()">
+            <span class = "menu1">file</span> 
+          </div>
+          <div id="about_us">
+            <span class = "menu2">about..us</span>
+          </div>
+          <div id="minimize" onclick="min()">
+            <span>-</span>
+          </div>
+          <div id="maximize" onclick="max()">
+            <span>+</span>
+          </div>
+          <div id="close" onclick="uff()">
+            <span>&times;</span>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div id="content">
+      hi
+    </div>
+    <script src="init.js"></script>
+  </body>
+  
+</html>
