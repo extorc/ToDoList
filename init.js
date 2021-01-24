@@ -3,7 +3,11 @@ const ipc = require('electron').ipcRenderer;
 var win = remote.getCurrentWindow();
 setTimeout(blah,1000);
 function openFS(){
-    ipc.send('openfile',true)
+    ipc.send('asynchronous-message', 'ping')
+    ipc.on('asynchronous-message',(event,arg)=>{
+        // console.log(arg)
+        document.getElementById('fileText').value = arg;
+    })
 }
 document.getElementById('openFL') 
             .addEventListener('change', function() { 
