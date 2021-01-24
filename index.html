@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-   
-    <script src="text_editor.js"></script>
+  <head>    
     <meta charset="UTF-8">
     <title>Extorc App</title>
     <link rel="stylesheet" href="index.css">
@@ -11,9 +9,11 @@
     <div onclick="min()">
       <span id = "file_menu" class = "fm">new</span> 
     </div>
-    <div>
+    <input type="file" name = 'openFL' id = "openFL">
+    <div onclick="openFS()">
       <span id = "file_menu2" class = "fm">open</span> 
     </div>
+    </input>
     <div id="container">
       <nav>
         <div id="buttons">
@@ -35,7 +35,6 @@
         </div>
       </nav>
     </div>
-    
     <div id="content">
       hi
     </div>

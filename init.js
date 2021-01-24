@@ -1,8 +1,21 @@
 const {remote} = require('electron');
+const ipc = require('electron').ipcRenderer;
 var win = remote.getCurrentWindow();
-
 setTimeout(blah,1000);
-
+function openFS(){
+    ipc.send('openfile',true)
+}
+document.getElementById('openFL') 
+            .addEventListener('change', function() { 
+              
+            var fr=new FileReader(); 
+            fr.onload=function(){ 
+                win.openDevTools();
+                console.log(fr.result());
+            } 
+              
+            fr.readAsText(this.files[0]); 
+        }) 
 function max(){
     var win = remote.getCurrentWindow();
     
