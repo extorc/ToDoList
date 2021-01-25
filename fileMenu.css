@@ -1,0 +1,32 @@
+#file_menu{
+    display:none;
+    background-color: #222222;
+    transform: translateY(34px);
+    font-size: 1.1em;
+  }
+  #file_menu2{
+    display: none;
+    background-color: #222222;
+    transform: translateY(63px);
+    font-size: 1.1em;
+    padding-left: 25px;
+    padding-right: 17px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+  }
+  #file_menu3{
+    display: none;
+    background-color: #222222;
+    transform: translateY(92px);
+    font-size: 1.1em;
+    padding-left: 25px;
+    padding-right: 17px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+  }
+  .fm{
+    z-index: 2;
+  }
+  #file_menu:hover,#file_menu2:hover,#file_menu3:hover{
+    background-color: #333333;
+  }
