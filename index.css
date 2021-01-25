@@ -102,15 +102,38 @@ span{
   padding-top: 7px;
   padding-bottom: 6px;
 }
+#file_menu3{
+  display: none;
+  background-color: #222222;
+  transform: translateY(92px);
+  font-size: 1.1em;
+  padding-left: 25px;
+  padding-right: 17px;
+  padding-top: 7px;
+  padding-bottom: 6px;
+}
 .fm{
   z-index: 2;
 }
-#file_menu:hover,#file_menu2:hover{
+#file_menu:hover,#file_menu2:hover,#file_menu3:hover{
   background-color: #333333;
 }
 #fileText{
   position: absolute;
-  top:40px;
+  top:80px;
+  left: 20px;
   width: 400px;
   height: 400px;
+}
+#fileName{
+  background-color: #222222;
+  color: #dacbcb;
+  position:absolute;
+  top: 37px;
+  left: 20px;
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight:bold;
+  background-color: #222222;
+  border-radius: 5px;
 }

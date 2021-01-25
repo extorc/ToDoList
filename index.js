@@ -2,9 +2,10 @@ const { app, BrowserWindow,dialog,ipcMain } = require('electron');
 const { get } = require('http');
 const path = require('path');
 const fs = require('fs');
-const { electron } = require('process');
 let mainWindow
 let contents
+let fileInfo
+
 if (require('electron-squirrel-startup')) { 
   app.quit();
 }
@@ -35,9 +36,11 @@ app.on('window-all-closed', () => {
 ipcMain.on('asynchronous-message',async(event, arg) => {
     const {filePaths} = await dialog.showOpenDialog({properties:['openFile']});
     contents =  fs.readFileSync(filePaths[0],'utf-8')
-    mainWindow.webContents.send('asynchronous-message',contents)
+    fileInfo = new Array(contents,filePaths[0]);
+    mainWindow.webContents.send('asynchronous-message',fileInfo)
 })
-async function getFile(){
-  
-
-}
+ipcMain.on('saveFile',(event,arg) => {
+  let currentCodeValue = arg
+  let openedFile = fileInfo[1]
+  fs.writeFileSync(openedFile,currentCodeValue,'utf-8')
+})

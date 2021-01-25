@@ -4,10 +4,15 @@ var win = remote.getCurrentWindow();
 setTimeout(blah,1000);
 function openFS(){
     ipc.send('asynchronous-message', 'ping')
-    ipc.on('asynchronous-message',(event,arg)=>{
-        // console.log(arg)
-        document.getElementById('fileText').value = arg;
+    ipc.on('asynchronous-message',(event,fileInfo)=>{
+        openedFile = fileInfo[1];
+        document.getElementById('fileText').value = fileInfo[0];
+        document.getElementById('fileName').innerText = openedFile;
     })
+}
+function saveFile(){
+    code = document.getElementById('fileText').value;
+    ipc.send('saveFile',code)
 }
 document.getElementById('openFL') 
             .addEventListener('change', function() { 
@@ -49,7 +54,7 @@ function get(el){
     return document.getElementById(el);
 }
 function open_file_menu(){
-    var fileMenu = [get('file_menu'),get('file_menu2')];
+    var fileMenu = [get('file_menu'),get('file_menu2'),get('file_menu3')];
     if (hidden == false){
         for (i = 0;i<fileMenu.length;i++){
             fileMenu[i].style.display = 'none';
