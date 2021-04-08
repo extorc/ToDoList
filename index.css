@@ -1,3 +1,4 @@
+
 .dragger{
   width : 800px;
   height : 40px;
@@ -8,4 +9,52 @@
   position: absolute;
   background-color: #333333;
   -webkit-app-region:drag;
+}
+#max{
+  position: absolute;
+  background-color: #222222;
+  top : 0;
+  right : 120px;
+  padding : 0;
+  margin : 0;
+  width : 60px;
+  height : 40px;
+}
+#min{
+  position: absolute;
+  background-color: #222222;
+  top : 0;
+  right : 60px;
+  padding : 0;
+  margin : 0;
+  width : 60px;
+  height : 40px;
+}
+#close{
+  position: absolute;
+  background-color: red;
+  top : 0;
+  right : 0;
+  padding : 0;
+  margin : 0;
+  width : 60px;
+  height : 40px;
+}
+.button_text{
+  position: absolute;
+  color : white;
+  font-weight: 800;
+  font-size: 1.75em;
+  padding-left: 25px;
+  padding-right: 25px;
+  /* transform: translateY(5px); */
+}
+#bt1, #bt3{
+  position: absolute;
+  color : white;
+  font-weight: 800;
+  font-size: 1.75em;
+  padding-left: 25px;
+  padding-right: 25px;
+  transform: translateY(4px);
 }
